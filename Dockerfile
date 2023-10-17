@@ -1,16 +1,19 @@
 FROM docker.io/python:3.12.0-slim-bookworm
 
 LABEL org.opencontainers.image.authors="FNNDSC <dev@babyMRI.org>" \
-      org.opencontainers.image.title="My ChRIS Plugin" \
-      org.opencontainers.image.description="A ChRIS plugin to do something awesome"
+      org.opencontainers.image.title="ChRIS Timer Plugin" \
+      org.opencontainers.image.description="A ChRIS plugin that outputs the execution time of main script."
 
-
-WORKDIR /usr/local/src/chris-timer-plugin
+ARG SRCDIR=/usr/local/src/app
+WORKDIR ${SRCDIR}
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN --mount=type=cache,sharing=private,target=/root/.cache/pip pip install -r requirements.txt
 
 COPY . .
-RUN pip install .
+ARG extras_require=none
+RUN pip install ".[${extras_require}]" \
+    && cd / && rm -rf ${SRCDIR}
+WORKDIR /
 
 CMD ["commandname"]

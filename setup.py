@@ -3,6 +3,7 @@ import re
 
 _version_re = re.compile(r"(?<=^__version__ = (\"|'))(.+)(?=\"|')")
 
+
 def get_version(rel_path: str) -> str:
     """
     Searches for the ``__version__ = `` line in a source code file.
@@ -19,18 +20,18 @@ def get_version(rel_path: str) -> str:
 
 
 setup(
-    name='chris-timer-plugin',
+    name='chris-plugin-template',
     version=get_version('app.py'),
-    description='A ChRIS plugin that prints the execution time of the main script.',
+    description='A ChRIS DS plugin template',
     author='FNNDSC',
     author_email='dev@babyMRI.org',
-    url='https://github.com/jakubzolkos/chris-timer-pl',
-    py_modules=['commandname'],
+    url='https://github.com/FNNDSC/python-chrisapp-template',
+    py_modules=['app'],
     install_requires=['chris_plugin'],
     license='MIT',
     entry_points={
         'console_scripts': [
-            'commandname = commandname:main'
+            'commandname = app:main'
         ]
     },
     classifiers=[

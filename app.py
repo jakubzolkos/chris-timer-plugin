@@ -23,7 +23,7 @@ parser = ArgumentParser(
 def timer(func):
     @wraps(func)
     def wrapper(a, b):
-        start_time = time.time();
+        start_time = time.time()
         retval = func(a, b)
         print("the function ends in ", time.time()-start_time, "secs")
         return retval
@@ -43,15 +43,14 @@ def timer(func):
     min_gpu_limit=0
 )
 @timer
-def main(options: Namespace, inputdir: Path, outputdir: Path):
+def main(options: Namespace, outputdir: Path):
     """
     :param options: non-positional arguments parsed by the parser given to @chris_plugin
-    :param inputdir: directory containing (read-only) input files
     :param outputdir: directory where to write output files
     """
 
     print(DISPLAY_TITLE)
-    for i in range(100000):
+    for i in range(10000000):
         continue
 
 

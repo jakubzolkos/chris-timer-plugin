@@ -1,12 +1,11 @@
-# My ChRIS Plugin
+# ChRIS Timer Plugin
 
 [![Version](https://img.shields.io/docker/v/fnndsc/chris-timer-plugin?sort=semver)](https://hub.docker.com/r/fnndsc/chris-timer-plugin)
 [![MIT License](https://img.shields.io/github/license/fnndsc/chris-timer-plugin)](https://github.com/FNNDSC/chris-timer-plugin/blob/main/LICENSE)
 [![ci](https://github.com/FNNDSC/chris-timer-plugin/actions/workflows/ci.yml/badge.svg)](https://github.com/FNNDSC/chris-timer-plugin/actions/workflows/ci.yml)
 
 `chris-timer-plugin` is a [_ChRIS_](https://chrisproject.org/)
-_ds_ plugin which takes in ...  as input files and
-creates ... as output files.
+_ds_ which outputs the execution time of the main script.
 
 ## Abstract
 
