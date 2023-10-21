@@ -3,30 +3,6 @@
   "dock_image": "ghcr.io/jakubzolkos/chris-timer-plugin:latest",
   "public_repo": "https://github.com/chris/pl-timer",
   "type": "ds",
-  "parameters": [
-    {
-      "name": "word",
-      "type": "str",
-      "optional": false,
-      "flag": "--word",
-      "short_flag": "-w",
-      "action": "store",
-      "help": "word to count",
-      "default": null,
-      "ui_exposed": true
-    },
-    {
-      "name": "pattern",
-      "type": "str",
-      "optional": true,
-      "flag": "--pattern",
-      "short_flag": "-p",
-      "action": "store",
-      "help": "input file filter glob",
-      "default": "**/*.txt",
-      "ui_exposed": true
-    }
-  ],
   "icon": "",
   "authors": "FNNDSC <dev@babyMRI.org>",
   "title": "ChRIS Timer Plugin",
