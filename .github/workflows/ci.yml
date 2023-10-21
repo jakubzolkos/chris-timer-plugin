@@ -52,7 +52,7 @@ jobs:
           import os
           import itertools
           
-          registries = ['docker.io', 'ghcr.io']
+          registries = ['ghcr.io']
           repos = ['${{ github.repository }}']
           if '${{ github.ref_type }}' == 'branch':
               tags = ['latest']
@@ -159,12 +159,3 @@ jobs:
           chris_url: https://cube.chrisproject.org/api/v1/
           compute_names: host,galena
 
-      - name: Update DockerHub description
-        if: steps.upload.outcome == 'success'
-        uses: peter-evans/dockerhub-description@v3
-        continue-on-error: true  # it is not crucial that this works
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          short-description: ${{ steps.upload.outputs.title }}
-          readme-filepath: ./README.md
