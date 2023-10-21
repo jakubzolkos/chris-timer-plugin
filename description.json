@@ -1,6 +1,6 @@
 {
   "name": "pl-timer",
-  "dock_image": "ghcr.io/jakubzolkos/chris-timer-plugin:latest",
+  "dock_image": "ghcr.io/jakubzolkos/chris-timer-plugin:1.0.1",
   "public_repo": "https://github.com/chris/pl-timer",
   "type": "ds",
   "icon": "",
